@@ -8,13 +8,7 @@ interface detailsResult {
   image : string;
 }
 
-const Result: Array<detailsResult> = [{
-  title: "Seigneur", author: "Jackie", date: 2018, image: '<img src="http://lorempixel.com/400/200" />'
-}, {
-  title: "Des", author: "Jackie", date: 2018, image: '<img src="http://lorempixel.com/400/200" />'
-}, {
-  title: "Magneaux", author: "Jackie", date: 2018, image: '<img src="http://lorempixel.com/400/200" />'
-}];
+const Result: Array<detailsResult> = [];
 
 @Component({
   selector: 'page-home',
@@ -23,9 +17,22 @@ const Result: Array<detailsResult> = [{
 
 
 export class HomePage {
-  listres = Result;
-  name : string = '';
+  listres: Array<detailsResult> = Result;
+  query : string = '';
+  show_no_result : boolean = false;
   constructor(public navCtrl: NavController) {
+
+  }
+
+  onInput():void{
+    console.log(this.query);
+    if(this.query ==''){
+      this.show_no_result = true;
+      this.listres = [];
+    }else{
+      this.show_no_result = false;
+      this.listres = Result;
+    }
 
   }
 

@@ -4,7 +4,8 @@
       Ionic Blank
     </ion-title>
   </ion-navbar>
-  <ion-searchbar [(ngModel)]="name" (ionInput)="onInput($event)"></ion-searchbar>
+  <ion-searchbar [(ngModel)]="query" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)">
+  </ion-searchbar>
 </ion-header>
 
 <ion-content padding>
