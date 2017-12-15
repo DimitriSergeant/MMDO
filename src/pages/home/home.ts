@@ -48,4 +48,9 @@ export class HomePage {
       params: new HttpParams().set('api_key', key).set('query', this.query)
     }).pluck("results");
   }
+
+  showRandomMovieAlert(movie : Result[]): void {
+
+
+  }
 }
